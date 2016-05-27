@@ -1,7 +1,7 @@
 {
   "name": "highcharts-navigator-handles",
   "version": "0.0.1",
-  "description": "Custom navigator handles for highstock",
+  "description": "This is a plugin that allows for custom handles in the navigator.",
   "main": "dist/navigator-handles.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

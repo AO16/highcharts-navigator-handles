@@ -1,0 +1,24 @@
+{
+  "title": "Navigator custom handles",
+  "name": "Navigator custom handles",
+  "version": "0.0.1",
+  "description": "This is a plugin that allows for custom handles in the navigator.",
+  "keywords": ["navigator", "handles", "highstock", "highcharts"],
+  "author": {
+    "name": "Andy Orahoske",
+    "url": "http://andyorahoske.com"
+  },
+  "licenses": [
+    {
+      "type": "The MIT License (MIT)",
+      "url": "https://opensource.org/licenses/MIT"
+    }
+  ],
+  "dependencies": {
+    "highcharts": "4.2.3"
+  },
+  "bugs": "https://github.com/AO16/highcharts-navigator-handles/issues",
+  "homepage": "https://github.com/AO16/highcharts-navigator-handles",
+  "docs": "https://github.com/AO16/highcharts-navigator-handles",
+  "download": "https://github.com/AO16/highcharts-navigator-handles/archive/master.zip"
+}
