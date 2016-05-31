@@ -1,4 +1,4 @@
-const { Highcharts: { Scroller, wrap } } = window;
+const { Highcharts: { Scroller, Chart, wrap } } = window;
 
 (function() {
   wrap(Scroller.prototype, 'render', function(proceed, min, max, pxMin, pxMax) {
@@ -35,6 +35,27 @@ const { Highcharts: { Scroller, wrap } } = window;
     const sliderX = maskX + ((maskWidth - sliderImg.height) / 2);
     const sliderY = top + height;
     this.slider.attr({ x: sliderX, y: sliderY });
+  });
+
+  wrap(Chart.prototype, 'init', function(proceed, options) {
+    const { navigator: { sliderImg } } = options;
+    if (!sliderImg) return;
+
+    options.navigator.outlineWidth = 0;
+    options.scrollbar = {
+      barBackgroundColor: 'white',
+      barBorderWidth: 0,
+      buttonBackgroundColor: 'white',
+      buttonBorderWidth: 0,
+      buttonArrowColor: null,
+      enabled: true,
+      height: sliderImg.height,
+      rifleColor: 'white',
+      trackBackgroundColor: 'white',
+      trackBorderWidth: 0
+    };
+
+    proceed.call(this, options);
   });
 
 }());

@@ -5,6 +5,7 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 var _window = window;
 var _window$Highcharts = _window.Highcharts;
 var Scroller = _window$Highcharts.Scroller;
+var Chart = _window$Highcharts.Chart;
 var wrap = _window$Highcharts.wrap;
 
 
@@ -60,5 +61,27 @@ var wrap = _window$Highcharts.wrap;
     var sliderX = maskX + (maskWidth - sliderImg.height) / 2;
     var sliderY = top + height;
     this.slider.attr({ x: sliderX, y: sliderY });
+  });
+
+  wrap(Chart.prototype, 'init', function (proceed, options) {
+    var sliderImg = options.navigator.sliderImg;
+
+    if (!sliderImg) return;
+
+    options.navigator.outlineWidth = 0;
+    options.scrollbar = {
+      barBackgroundColor: 'white',
+      barBorderWidth: 0,
+      buttonBackgroundColor: 'white',
+      buttonBorderWidth: 0,
+      buttonArrowColor: null,
+      enabled: true,
+      height: sliderImg.height,
+      rifleColor: 'white',
+      trackBackgroundColor: 'white',
+      trackBorderWidth: 0
+    };
+
+    proceed.call(this, options);
   });
 })();
