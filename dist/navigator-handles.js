@@ -6,6 +6,7 @@ var _window = window;
 var _window$Highcharts = _window.Highcharts;
 var Scroller = _window$Highcharts.Scroller;
 var Chart = _window$Highcharts.Chart;
+var merge = _window$Highcharts.merge;
 var wrap = _window$Highcharts.wrap;
 
 
@@ -69,7 +70,7 @@ var wrap = _window$Highcharts.wrap;
     if (!sliderImg) return;
 
     options.navigator.outlineWidth = 0;
-    options.scrollbar = {
+    options.scrollbar = merge({
       barBackgroundColor: 'white',
       barBorderWidth: 0,
       buttonBackgroundColor: 'white',
@@ -80,7 +81,7 @@ var wrap = _window$Highcharts.wrap;
       rifleColor: 'white',
       trackBackgroundColor: 'white',
       trackBorderWidth: 0
-    };
+    }, options.scrollbar);
 
     proceed.call(this, options);
   });

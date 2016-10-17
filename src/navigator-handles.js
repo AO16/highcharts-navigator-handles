@@ -1,4 +1,4 @@
-const { Highcharts: { Scroller, Chart, wrap } } = window;
+const { Highcharts: { Scroller, Chart, merge, wrap } } = window;
 
 (function() {
   wrap(Scroller.prototype, 'render', function(proceed, min, max, pxMin, pxMax) {
@@ -42,7 +42,7 @@ const { Highcharts: { Scroller, Chart, wrap } } = window;
     if (!sliderImg) return;
 
     options.navigator.outlineWidth = 0;
-    options.scrollbar = {
+    options.scrollbar = merge({
       barBackgroundColor: 'white',
       barBorderWidth: 0,
       buttonBackgroundColor: 'white',
@@ -53,7 +53,7 @@ const { Highcharts: { Scroller, Chart, wrap } } = window;
       rifleColor: 'white',
       trackBackgroundColor: 'white',
       trackBorderWidth: 0
-    };
+    }, options.scrollbar);
 
     proceed.call(this, options);
   });
