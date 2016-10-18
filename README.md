@@ -2,6 +2,8 @@
 
 This is a plugin that allows for custom handles in the navigator. The navigator requires that you are using Highstock.
 
+If you are using `sliderImg` it effectively overrides the scrollbar, so all of those options will be ignored.
+
 ## Prerequisites
 
 * [Gulp](http://gulpjs.com/)
